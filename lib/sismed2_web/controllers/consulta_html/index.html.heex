@@ -1,0 +1,25 @@
+<.header>
+  Lista de Consultas
+    <:subtitle>Lista geral, clique na consulta para mais detalhes</:subtitle>
+
+  <:actions>
+    <.link href={~p"/consultas/new"}>
+      <.button>Nova Consulta</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="consultas" rows={@consultas} row_click={&JS.navigate(~p"/consultas/#{&1}")}>
+  <:col :let={consulta} label="Data"><%= consulta.data %></:col>
+  <:action :let={consulta}>
+    <div class="sr-only">
+      <.link navigate={~p"/consultas/#{consulta}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/consultas/#{consulta}/edit"}>Editar</.link>
+  </:action>
+  <:action :let={consulta}>
+    <.link href={~p"/consultas/#{consulta}"} method="delete" data-confirm="Deseja desmarcar a consulta?">
+      Desmarcar
+    </.link>
+  </:action>
+</.table>

@@ -1,0 +1,8 @@
+<.header>
+  Editar Consulta <%= @consulta.id %>
+  <:subtitle>Use este formulário para gerenciar os registros de consulta no seu banco de dados.</:subtitle>
+</.header>
+
+<.consulta_form changeset={@changeset} action={~p"/consultas/#{@consulta.id}"} medicos={@medicos} pacientes={@pacientes} />
+
+<.back navigate={~p"/consultas"}>Voltar para consultas</.back>

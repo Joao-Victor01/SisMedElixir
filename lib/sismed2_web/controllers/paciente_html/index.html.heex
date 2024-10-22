@@ -1,0 +1,25 @@
+<.header>
+  Lista de Pacientes
+  <:actions>
+    <.link href={~p"/pacientes/new"}>
+      <.button>Novo Paciente</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="pacientes" rows={@pacientes} row_click={&JS.navigate(~p"/pacientes/#{&1}")}>
+  <:col :let={paciente} label="Nome"><%= paciente.nome %></:col>
+  <:col :let={paciente} label="CPF"><%= paciente.cpf %></:col>
+  <:col :let={paciente} label="Contato"><%= paciente.contato %></:col>
+  <:action :let={paciente}>
+    <div class="sr-only">
+      <.link navigate={~p"/pacientes/#{paciente}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/pacientes/#{paciente}/edit"}>Editar</.link>
+  </:action>
+  <:action :let={paciente}>
+    <.link href={~p"/pacientes/#{paciente}"} method="delete" data-confirm="Deletar paciente?">
+      Deletar
+    </.link>
+  </:action>
+</.table>

@@ -1,0 +1,8 @@
+<.header>
+  New Consulta
+  <:subtitle>Use this form to manage consulta records in your database.</:subtitle>
+</.header>
+
+<.consulta_form changeset={@changeset} action={~p"/consultas"} medicos={@medicos} pacientes={@pacientes}/>
+
+<.back navigate={~p"/consultas"}>Back to consultas</.back>

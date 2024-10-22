@@ -1,0 +1,17 @@
+<.header>
+  Paciente <%= @paciente.nome %>
+  <:subtitle>Dados detalhados do paciente:</:subtitle>
+  <:actions>
+    <.link href={~p"/pacientes/#{@paciente}/edit"}>
+      <.button>Editar dados do paciente</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Nome"><%= @paciente.nome %></:item>
+  <:item title="Cpf"><%= @paciente.cpf %></:item>
+  <:item title="Contato"><%= @paciente.contato %></:item>
+</.list>
+
+<.back navigate={~p"/pacientes"}>Voltar para lista de pacientes</.back>

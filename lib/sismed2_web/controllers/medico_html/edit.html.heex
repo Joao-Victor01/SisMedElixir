@@ -1,0 +1,8 @@
+<.header>
+  Editar dados: <%= @medico.nome %>
+  <:subtitle>Altere os campos desejados abaixo: </:subtitle>
+</.header>
+
+<.medico_form changeset={@changeset} action={~p"/medicos/#{@medico}"} />
+
+<.back navigate={~p"/medicos"}>Voltar para lista de médicos</.back>

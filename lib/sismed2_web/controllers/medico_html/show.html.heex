@@ -1,0 +1,17 @@
+<.header>
+  Dr(a). <%= @medico.nome %>
+  <:subtitle>Dados do(a) médico(a):</:subtitle>
+  <:actions>
+    <.link href={~p"/medicos/#{@medico}/edit"}>
+      <.button>Editar dados</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Nome"><%= @medico.nome %></:item>
+  <:item title="CRM"><%= @medico.crm %></:item>
+  <:item title="Especializações"><%= @medico.especializacoes %></:item>
+</.list>
+
+<.back navigate={~p"/medicos"}>Voltar para lista de médicos</.back>

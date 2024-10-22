@@ -1,0 +1,24 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:data]} type="datetime-local" label="Data" />
+
+  <label for="consulta_medico_id">Médico:</label>
+  <select name="consulta[medico_id]" id="consulta_medico_id">
+    <%= for medico <- @medicos do %>
+      <option value={medico.id}><%= medico.nome %></option>
+    <% end %>
+  </select>
+
+  <label for="consulta_paciente_id">Paciente:</label>
+  <select name="consulta[paciente_id]" id="consulta_paciente_id">
+    <%= for paciente <- @pacientes do %>
+      <option value={paciente.id}><%= paciente.nome %></option>
+    <% end %>
+  </select>
+
+  <:actions>
+    <.button>Marcar Consulta</.button>
+  </:actions>
+</.simple_form>

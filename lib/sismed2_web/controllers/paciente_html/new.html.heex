@@ -1,0 +1,8 @@
+<.header>
+  Novo(a) Paciente
+  <:subtitle>Preencha os campos abaixo</:subtitle>
+</.header>
+
+<.paciente_form changeset={@changeset} action={~p"/pacientes"} />
+
+<.back navigate={~p"/pacientes"}>Voltar para lista de pacientes</.back>

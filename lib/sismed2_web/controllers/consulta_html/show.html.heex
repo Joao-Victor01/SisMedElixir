@@ -1,0 +1,17 @@
+<.header>
+  Consulta <%= @consulta.id %>
+  <:subtitle>Detalhes da consulta.</:subtitle>
+  <:actions>
+    <.link href={~p"/consultas/#{@consulta}/edit"}>
+      <.button>Editar consulta</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Data"><%= @consulta.data %></:item>
+  <:item title="Médico"><%= @medico.nome %></:item>
+  <:item title="Paciente"><%= @paciente.nome %></:item>
+</.list>
+
+<.back navigate={~p"/consultas"}>Voltar para tela de Consultas</.back>
